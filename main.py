@@ -1,0 +1,4 @@
+from Texas_Instruments.Linear_Voltage_Regulators import LM317
+from Texas_Instruments.Switching_Voltage_Regulators import LM2575
+
+print(LM317.name)
