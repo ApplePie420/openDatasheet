@@ -6,12 +6,13 @@ class OpAmp():
     # electrical ratings
     supplyVoltage = None                # V (symm)
     differentialInputVoltage = None     # V (symm)
-    maxOffsetVoltage = None             # V
-    maxOffsetCurrent = None             # A
     inputResistance = None              # Ω
+    # OpAmp specific characteristics
     transientResponse = None            # s
     bandwidth = None                    # Hz
     slewRate = None                     # V/μS
+    maxOffsetVoltage = None             # V
+    maxOffsetCurrent = None             # A
     # thermal ratings
     maxJunctionTemp = None              # °C
     # technical

@@ -6,7 +6,7 @@ Folder and file names are in `Pascal_Snake_Case`. Each file in manufacturer's fo
 ## Characteristics
 All variables should be defined in it's **SI unit base value** (that means volts, meters, amperes, farads, ohms) __if not stated otherwise__. 
 
-Each variable should have a comment at the and, stating which unit is used to represent this value. Sometimes, it's unnecessary to use big units (such as farads for input capacitance, almost never bigger than nanofarads). In that case, units can be smaller. 
+Each variable is a 2-value sized array (if not required otherwise), where `[0]` is value and `[1]` is [unit.](../documentation/units_list.md)  Sometimes, it's unnecessary to use big units (such as farads for input capacitance, almost never bigger than nanofarads). In that case, units can be smaller, but be sure to specify it (e.g. return `[100, "nF"]`). Same goes for methods (they return array of value and unit).
 
 Each file should start with appropriate imports of `component` class:
 ```python
@@ -25,15 +25,16 @@ class LM317(Regulator):
     name = "LM317"
     type = "linear"
     packages = ["TO-3", "TO-220", "TO-263", "SOT-223", "TO-252"]
-    maxInputVoltage = 40                                    # V
-    refVoltage = 1.25                                       # V
-    maxOutputVoltage = maxInputVoltage - refVoltage         # V
-    maxOutputCurrent = 1.5                                  # A
-    minLoadCurrent = 0.004                                  # A
-    currentLimit = True                                     # bool
-    RMSnoise = 0.003                                        # % V_o
-    rippleRejection = 65                                    # dB
-    maxJunctionTemp = 125                                   # °C    
+    packages = ["TO-3", "TO-220", "TO-263", "SOT-223", "TO-252"]
+    maxInputVoltage = [40, "V"]
+    refVoltage = [1.25, "V"]
+    maxOutputVoltage = [maxInputVoltage[0] - refVoltage[0], "V"]
+    maxOutputCurrent = [1.5, "A"]
+    minLoadCurrent = [0.004, "A"]
+    currentLimit = True
+    RMSnoise = [0.003, "%Vo"]
+    rippleRejection = [65, "dB"]
+    maxJunctionTemp = [125, "°C"]  
 
     @staticmethod
     def Vout(R1, R2):
@@ -45,4 +46,4 @@ class LM317(Regulator):
 ```
 
 ## List of all units and their acronyms
-Please refer to [this document.](documentation/units_list.md)
+Please refer to [this document.](../documentation/units_list.md)

@@ -8,7 +8,7 @@ class Transistor_Bipolar():
     collectorEmitterVoltage = None                  # V
     emitterBaseVoltage = None                       # V
     collectorCurrent = None                         # A
-    currentGain = None                              # multiple
+    currentGain = None                              # (multiple)
     collectorEmitterSaturationVoltage = None        # V
     baseEmitterSaturationVoltage = None             # V
     baseEmitterOnVoltage = None                     # V

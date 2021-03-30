@@ -52,4 +52,4 @@ class Regulator():
 ```
 
 ## List of all units and their acronyms
-Please refer to [this document.](documentation/units_list.md)
+Please refer to [this document.](../documentation/units_list.md)

@@ -3,8 +3,8 @@ class Capacitor():
     name = "unknown"
     packages = []
     type = None
-    diameter = None
-    height = None
+    diameter = None             # ø mm
+    height = None               # mm
     # electrical ratings
     capacitance = None          # F
     ratedVoltage = None         # V
