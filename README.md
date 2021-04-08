@@ -11,7 +11,7 @@ If there are some calculations provided in datasheet, they are reflected in it's
 If you want to contribute, please follow **guidelines** in each folder. You can either add new [component type](./_components/) or an existing [part](./Manufacturers).
 
 # Plans for future
-[] Integrate SAGE/SymPy/Wolfram to solve equations
-[] Create automatic checker if guidelines are met
-[] Create REST API
-[] Add metaparts
+- [] Integrate SAGE/SymPy/Wolfram to solve equations
+- [] Create automatic checker if guidelines are met
+- [] Create REST API
+- [] Add metaparts
