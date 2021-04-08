@@ -1,4 +1,4 @@
-class AVR8bit():
+class AVR_8bit():
     # package
     name = "unknown"
     packages = []

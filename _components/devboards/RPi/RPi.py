@@ -1,0 +1,2 @@
+class RPi():
+    pass
