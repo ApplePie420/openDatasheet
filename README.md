@@ -10,6 +10,9 @@ If there are some calculations provided in datasheet, they are reflected in it's
 # Contributing
 If you want to contribute, please follow **guidelines** in each folder. You can either add new [component type](./_components/) or an existing [part](./Manufacturers).
 
+# Testing
+No intensive testing (apart from visual confirmation with running `main.py`) is deployed yet. However, if you decide to contribute and run the project, please __delete all `__pycache__` folders__ (or run python with `-B` flag). `.gitignore` is whacky and sometimes ignores it (ironically).
+
 # Plans for future
 - [] Integrate SAGE/SymPy/Wolfram to solve equations
 - [] Create automatic checker if guidelines are met

@@ -6,5 +6,5 @@ class Comparator(commonInfo):
     offsetCurrent = None                # nA
     inputOffsetVoltage = None           # mV
     voltageGain = None                  # V/mV
-    saturationVOltage = None            # V
+    saturationVoltage = None            # V
     responseTime = None                 # ns

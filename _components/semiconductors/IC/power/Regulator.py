@@ -6,7 +6,7 @@ class Regulator(commonInfo):
     maxOutputCurrent = None         # A
     refVoltage = None               # V
     minLoadCurrent = None           # A
-    currentLimit = None             # bool
+    currentLimit = None             # A
     RMSnoise = None                 # %V_o
     rippleRejection = None          # dB
 
