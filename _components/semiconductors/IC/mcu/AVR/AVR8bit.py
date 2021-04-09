@@ -1,10 +1,7 @@
-class AVR_8bit():
-    # package
-    name = "unknown"
-    packages = []
-    type = None
+from _components.semiconductors._commonInfo import commonInfo
+
+class AVR_8bit(commonInfo):
     # electrical ratings
-    maxSupplyVoltage = None             # V
     maxCurrentPerPin = None             # mA
     outputLowVoltage = None             # V
     outputHighVoltage = None            # V
@@ -37,9 +34,3 @@ class AVR_8bit():
     watchdog = None                     # bool
     onChipPLA = None                    # int (0 if none, >0 represents number of programmable cells)
     arduinoBootloaderCompatible = None  # bool
-    # thermal ratings
-    maxJunctionTemp = None              # °C
-    # technical
-    manufacturers = None
-    datasheet = None
-    manufacturerNo = None

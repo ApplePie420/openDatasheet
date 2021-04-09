@@ -1,8 +1,6 @@
+from _components.semiconductors._commonInfo import commonInfo
+
 class Transistor_Bipolar():
-    # package
-    name = "unknown"
-    packages = []
-    type = None
     # electrical ratings
     collectorBaseVoltage = None                     # V
     collectorEmitterVoltage = None                  # V
@@ -15,9 +13,3 @@ class Transistor_Bipolar():
     bandwidth = None                                # Hz
     outputCapacitance = None                        # pF
     inputCapacitance = None                         # pF
-    # thermal ratings
-    maxJunctionTemp = None                          # °C
-    # technical
-    manufacturers = None
-    datasheet = None
-    manufacturerNo = None

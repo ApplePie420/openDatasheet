@@ -1,8 +1,6 @@
+from _components.semiconductors._commonInfo import commonInfo
+
 class Transistor_Unipolar():
-    # package
-    name = "unknown"
-    packages = []
-    type = None
     # electrical ratings
     drainSourceVoltage = None               # V
     gateSourceVoltage = None                # V
@@ -24,9 +22,3 @@ class Transistor_Unipolar():
     continousSourceDrainDiodeCurrent = None # A
     bodyDiodeVoltage = None                 # V
     diodeTonTime = None                     # μs
-    # thermal ratings
-    maxJunctionTemp = None                  # °C
-    # technical
-    manufacturers = None
-    datasheet = None
-    manufacturerNo = None

@@ -1,3 +1,3 @@
-from Manufacturers.Texas_Instruments.Switching_Voltage_Regulators import LM2575
+from Manufacturers.Texas_Instruments.Common_Comparator import LM111
 
-print(LM2575.maxInputVoltage)
+print(LM111.supplyVoltage)

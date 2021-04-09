@@ -1,11 +1,8 @@
-class Digital74Series():
-    # package
-    name = "unknown"
-    packages = []
-    type = None
+from _components.semiconductors._commonInfo import commonInfo
+
+class Digital74Series(commonInfo):
     # electrical ratings
     maxDataInputVoltage = None          # V
-    maxSupplyVoltage = None             # V
     lowLevelVoltage = None              # V
     highLevelVoltage = None             # V
     highLevelOutputCurrent = None       # mA
@@ -20,9 +17,3 @@ class Digital74Series():
     noOfInputs = None                   # int
     noOfOutputs = None                  # int
     synchronous = None                  # bool (1 = synchronous/sequential, 0 = asynchronous)
-    # thermal ratings
-    maxJunctionTemp = None              # °C
-    # technical
-    manufacturers = None
-    datasheet = None
-    manufacturerNo = None

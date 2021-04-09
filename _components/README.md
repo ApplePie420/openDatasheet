@@ -10,10 +10,10 @@ curent = None
 # mechanical characteristics
 length = None
 width = None
-# thermal characteristics 
-maxTemp = None
 ```
 All values default to `None`. In this case, if no value is defined, it simply returns this value. 
+
+If there is `_commonInfo.py` present in the folder, import it to **ALL** components in subdirectory, and pass it as an argument. This will ensure that the component class will extend on commonInfo. Also, the DNRY (_Do Not Repeat Yourself_) rule will hold. 
 
 Try to filter necessary, useful and commonly sought for information. You can include everything, but it's not advised to. 
 
@@ -25,11 +25,9 @@ Include only **GENERAL** equations, that apply to **ALL** parts in this category
 
 ## Example of properly documented part
 ```python
-class Regulator():
-    # package
-    name = "unknown"
-    packages = []
-    type = None
+class Regulator(commonInfo):
+    from _components.semiconductors._commonInfo import commonInfo
+
     # electrical ratings
     maxInputVoltage = None          # V
     maxOutputVoltage = None         # V
@@ -39,12 +37,6 @@ class Regulator():
     currentLimit = None             # bool
     RMSnoise = None                 # %V_o
     rippleRejection = None          # dB
-    # thermal ratings
-    maxJunctionTemp = None          # °C
-    # technical
-    manufacturers = None
-    datasheet = None
-    manufacturerNo = None
 
     @staticmethod
     def efficiency(Pout, Pin):

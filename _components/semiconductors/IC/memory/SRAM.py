@@ -1,10 +1,7 @@
-class SRAM():
-    # package
-    name = "unknown"
-    packages = []
-    type = None
+from _components.semiconductors._commonInfo import commonInfo
+
+class SRAM(commonInfo):
     # electrical ratings
-    maxSupplyVoltage = None             # V
     maxCurrentPerPin = None             # mA
     outputLowVoltage = None             # V
     outputHighVoltage = None            # V
@@ -22,9 +19,3 @@ class SRAM():
     averageAccessTime = None            # ns
     wordSize = None                     # bit
     columnSize = None                   # x1000 (k)
-    # thermal ratings
-    maxJunctionTemp = None              # °C
-    # technical
-    manufacturers = None
-    datasheet = None
-    manufacturerNo = None

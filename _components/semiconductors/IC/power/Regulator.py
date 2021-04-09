@@ -1,10 +1,7 @@
-class Regulator():
-    # package
-    name = "unknown"
-    packages = []
-    type = None
+from _components.semiconductors._commonInfo import commonInfo
+
+class Regulator(commonInfo):
     # electrical ratings
-    maxInputVoltage = None          # V
     maxOutputVoltage = None         # V
     maxOutputCurrent = None         # A
     refVoltage = None               # V
@@ -12,12 +9,6 @@ class Regulator():
     currentLimit = None             # bool
     RMSnoise = None                 # %V_o
     rippleRejection = None          # dB
-    # thermal ratings
-    maxJunctionTemp = None          # °C
-    # technical
-    manufacturers = None
-    datasheet = None
-    manufacturerNo = None
 
     @staticmethod
     def efficiency(Pout, Pin):

@@ -1,8 +1,6 @@
-class Diode():
-    # package
-    name = "unknown"
-    packages = []
-    type = None
+from _components.semiconductors._commonInfo import commonInfo
+
+class Diode(commonInfo):
     # electrical ratings
     maxReverseVoltage = None        # V
     maxRMSVoltage = None            # V
@@ -11,18 +9,8 @@ class Diode():
     leakageCurrent = None           # A
     forwardVoltage = None           # V
     capacitance = None              # pF
-    # thermal ratings
-    maxJunctionTemp = None          # °C
-    # technical
-    manufacturers = None
-    datasheet = None
-    manufacturerNo = None
 
-class Zener_Diode():
-    # package
-    name = "unknown"
-    packages = []
-    type = None
+class Zener_Diode(commonInfo):
     # electrical ratings
     zenerVoltage = None             # V
     zenerImpedance = None           # Ω
@@ -30,19 +18,8 @@ class Zener_Diode():
     leakageCurrent = None           # μA
     maxCurrent = None               # A
     forwardVoltage = None        # V
-    # thermal ratings
-    maxJunctionTemp = None          # °C
-    maxDissapationPower = None      # W
-    # technical
-    manufacturers = None
-    datasheet = None
-    manufacturerNo = None
 
-class Schottky_Diode():
-    # package
-    name = "unknown"
-    packages = []
-    type = None
+class Schottky_Diode(commonInfo):
     # electrical ratings
     maxReverseVoltage = None        # V
     maxCurrent = None               # A
@@ -52,19 +29,8 @@ class Schottky_Diode():
     forwardVoltage = None           # V
     capacitance = None              # pF
     recoveryTime = None             # nS
-    # thermal ratings
-    maxJunctionTemp = None          # °C
-    # technical
-    manufacturers = None
-    datasheet = None
-    manufacturerNo = None
 
-class Bridge_Rectifier():
-    # package
-    name = "unknown"
-    packages = []
-    type = None
-    shape = None
+class Bridge_Rectifier(commonInfo):
     # electrical ratings
     rectificationType = None        # half, full
     phaseNo = None                  # 1, 3
@@ -72,27 +38,11 @@ class Bridge_Rectifier():
     maxCurrent = None               # A
     maxInrushCurrent = None         # A
     forwardVoltage = None           # V
-    # thermal ratings
-    maxJunctionTemp = None          # °C
-    # technical
-    manufacturers = None
-    datasheet = None
-    manufacturerNo = None
 
-class LED():
-    # package
-    name = "unknown"
-    packages = []
-    type = None
+class LED(commonInfo):
     # electrical ratings
     forwardCurrent = None           # mA
     reverseVoltage = None           # V
     luminousIntensity = None        # lm
     viewingAngle = None             # ° degrees
     dominantWavelength = None       # nm
-    # thermal ratings
-    maxJunctionTemp = None          # °C
-    # technical
-    manufacturers = None
-    datasheet = None
-    manufacturerNo = None
