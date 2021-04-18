@@ -1,3 +1,3 @@
-from Manufacturers.Texas_Instruments.Common_Comparator import LM111
+from Manufacturers.Texas_Instruments.Switching_Voltage_Regulators import LM257
 
-print(LM111.supplyVoltage)
+print(LM257.refVoltage)
