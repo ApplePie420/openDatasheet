@@ -30,6 +30,59 @@ class LM317(Regulator):
         power = ((Vin-Vout)*Iload)+(Vin*0.00005)
         return [power, "W"]
 
+    @staticmethod
+    def drawExampleSchematic(R2, Vout):
+        # R2 = R1((V/1.25)-1)
+        R2 = 240 * ((Vout/1.25)-1)
+        import schemdraw
+        import schemdraw.elements as elm
+        elm.style(elm.STYLE_IEC)
+        d = schemdraw.Drawing()
+        d += elm.Jack().label("Vin")
+        d += (reg := elm.VoltageRegulator().label("LM317").anchor("in"))
+        d += elm.Dot()
+        d += elm.Line().down()
+        d += (inCap := elm.Capacitor().down().label("100n"))
+        d += elm.Ground()
+
+        d += (outLine := elm.Line().at(reg.out).right())
+
+        d += (adjLine := elm.Line().at(reg.gnd).down().toy(inCap.start))
+        d += (adjDot := elm.Dot())
+        d.push()
+        d += elm.Resistor().down().label(str(int(R2)), rotate=90)
+        d += elm.Ground()
+        d.pop()
+        d += elm.Line().right()
+        d.push()
+        d += elm.Dot()
+        d += (adjR := elm.Resistor().up().toy(outLine.end).label("240"))
+        d += elm.Dot()
+        d += elm.Capacitor().down().at(adjR.start).label("10u")
+        d += elm.Ground()
+        d.pop()
+        d += elm.Line().right()
+        d += elm.Diode().up().toy(outLine.end).label("1N4002")
+        d += elm.Dot()
+        d.push()
+        d += elm.Line().left()
+
+        d.pop()
+        
+        d += elm.Line().right()
+        
+        d += elm.Dot()
+        d.push()
+        
+        d += elm.Line().toy(inCap.start).down()
+        d += elm.Capacitor().label("1u")
+        d += elm.Ground()
+
+        d.pop()
+        d += elm.Plug().label(str(Vout) + "V")
+
+        d.draw()
+
 class LM117():
     name = "LM117"
     type = "linear"

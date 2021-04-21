@@ -1,3 +1,3 @@
-from Manufacturers.Texas_Instruments.Common_Comparator import LM111
+from Manufacturers.Texas_Instruments.Linear_Voltage_Regulators import LM317
 
-print(LM111.supplyVoltage)
+LM317.drawExampleSchematic(5000, 10)
