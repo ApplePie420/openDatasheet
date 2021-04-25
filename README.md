@@ -16,7 +16,7 @@ If you've decided to contribute with new parts only, please commit to `newCompon
 No intensive testing (apart from visual confirmation with running `main.py`) is deployed yet. However, if you decide to contribute and run the project, please __delete all `__pycache__` folders__ (or run python with `-B` flag). `.gitignore` is whacky and sometimes ignores it (ironically).
 
 # Plans for future
-- [] Integrate SAGE/SymPy/Wolfram to solve equations
-- [] Create automatic checker if guidelines are met
-- [] Create REST API
-- [] Add metaparts
+- [ ] Integrate SAGE/SymPy/Wolfram to solve equations
+- [ ] Create automatic checker if guidelines are met
+- [ ] Create REST API
+- [ ] Add metaparts

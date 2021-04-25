@@ -1,5 +1,4 @@
 from _components.semiconductors.IC.power.Regulator import Regulator
-import math
 
 class LM2575(Regulator):
     name = "LM2575"
@@ -52,7 +51,7 @@ class LM2575(Regulator):
         return [cycle, "kHz"]
 
     #TODO: make this actually work lmao
-    ''''
+    """
     Basically what needs to be done, there is this Figure 28 in datasheet, that marks areas in which different
     inductor values should be chosen, based on U and I (on X and Y axis). However, those areas are triangular, 
     not square, and my dumb ass cannot find a way, how to check if those 2 values lies within the triangle.
@@ -60,39 +59,33 @@ class LM2575(Regulator):
     more complex than multiplication, so no vectoring, goniometry or other wizardry is going to happen.
     There was an idea to rotate the figure 45 degrees to make the lines straight, and then check on that one
     horizontal axis in which area the value lies, but after 5 hours, we were unable to solve this. Help.
-    ''''
     @staticmethod
     def selectInductor(Vin, loadCurrent):
         # Vin*cos(fi)-Iout*sin(fi)
         pass
-
+    """
     @staticmethod
     def selectSchottkyDiode(Vr):
         if(Vr > 20):
-            schottkyDiode = ["1N5817", "MBR120P", "SR102"]
-            return schottkyDiode
+            return ["1N5817", "MBR120P", "SR102"]
         elif(Vr > 30):
-            schottkyDiode = ["1N5818", "MBR130P", "11DQ03", "SR103"]
-            return schottkyDiode
+            return ["1N5818", "MBR130P", "11DQ03", "SR103"]
         elif(Vr > 40):
-            schottkyDiode = ["1N5819", "MBR140P", "11DQ04", "SR104"]
-            return schottkyDiode
+            return ["1N5819", "MBR140P", "11DQ04", "SR104"]
         elif(Vr > 50):
-            schottkyDiode = ["MBR150", "11DQ05", "SR105"]
-            return schottkyDiode
+            return ["MBR150", "11DQ05", "SR105"]
         elif(Vr > 60):
-            schottkyDiode = ["MBR160", "11DQ06", "SR106"]
-            return schottkyDiode
+            return ["MBR160", "11DQ06", "SR106"]
 
     @staticmethod
     def exampleFixedRegulator(Vin, Vout, maxCurrent):
-        # Output capacigor is always recommended to be between 47 and 100uF, and max voltage 63V (to be safe)
-        outputCap = [100, "µF", 63, "V"]
+        # Output capacitor is always recommended to be between 47 and 100uF, and max voltage 63V (to be safe)
+        outputCap = [[100, "µFF"], [63, "V"]]
         # schottky diode, this is basically copy of Table 1
         Vr = Vin * 1.25
         schottkyDiode = selectSchottkyDiode(Vr)
         # output cap, again, recommended 47uF but for some reason at 25V only.. 
-        inputCap = [47, "µF", 63, "V"]
+        inputCap = [[47, "µF"], [63, "V"]]
 
     @staticmethod
     def exampleAdjustableRegulator(Vin, Vout, maxCurrent, R1):
@@ -100,8 +93,8 @@ class LM2575(Regulator):
         f = 52
         # calculate the value of R2 resistor divider
         # R1 should be between 1k and 5k as specified in datasheet
-        R2 = R1 * ((Vout / refVoltage) - 1)
-        # calculate tghe volt.microsecond constant, that will be matched with look-up table
+        R2 = R1 * ((Vout / 1.25) - 1)
+        # calculate the volt.microsecond constant, that will be matched with look-up table
         Et = Inductor_ET(Vin, Vout)
         inductorL = None
         # output capacitor
@@ -110,4 +103,4 @@ class LM2575(Regulator):
         Vr = Vin * 1.25
         schottkyDiode = selectSchottkyDiode(Vr)
         # output cap, again, recommended 100uF
-        inputCap = [100, "µF", 63, "V"]
+        inputCap = [[100, "µF"], [63, "V"]]
