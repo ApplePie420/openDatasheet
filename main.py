@@ -1,3 +1,3 @@
-from Manufacturers.Texas_Instruments.Common_Comparator import LM111
+from Manufacturers.Texas_Instruments.Linear_Voltage_Regulators import LM317
 
-print(LM111.supplyVoltage)
+print(LM317.Examples().exampleCurrentLimiter(1))

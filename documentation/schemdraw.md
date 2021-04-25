@@ -1,0 +1,5 @@
+# Schemdraw branch
+You have entered a branch that is a very sacred, cursed place. In here, you enter realm of spaghetti code, that cannot be made otherwise, because reasons. But, if you for some reason like LaTeX code, you will enjoy this branch.
+
+# Contribution
+You can contribute by simply re-drawing example schmatics in datasheet - but in code. I decided on `schemdraw` library, because it has most of components ready as modules. Go and [check the documentation](https://schemdraw.readthedocs.io/en/latest/usage/start.html) to learn how it works. Then, just simply re-draw the example schematic in code, and replace all static values by calculated ones. See this [example](https://github.com/ApplePie420/openDatasheet/blob/46b623821e8bd046d2b0bc4d16e48fce020405c0/Manufacturers/Texas_Instruments/Linear_Voltage_Regulators.py#L34) to get inspired and see, how it (probably) should be done. If you know about better library or way about how to do this, please contact me or open an Issue.
